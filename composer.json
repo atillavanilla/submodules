@@ -1,0 +1,43 @@
+{
+    "name": "atiila/submodules",
+    "version": "0.1.0",
+    "description": "A Laravel package for generating and managing modular applications",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": ">=8.2",
+        "illuminate/console": "^10.0|^11.0",
+        "illuminate/filesystem": "^10.0|^11.0",
+        "illuminate/support": "^10.0|^11.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^8.0|^9.0",
+        "phpunit/phpunit": "^10.0",
+        "phpstan/phpstan": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Atilla\\ModuleGenerator\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Atilla\\ModuleGenerator\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Atilla\\ModuleGenerator\\ModuleGeneratorServiceProvider"
+            ],
+            "aliases": {
+                "ModuleGenerator": "Atilla\\ModuleGenerator\\Facades\\ModuleGenerator"
+            }
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true
+    }
+}
