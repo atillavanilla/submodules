@@ -1,5 +1,5 @@
 {
-    "name": "atilla/submodules",
+    "name": "vanilla/submodules",
     "version": "0.1.0",
     "description": "A Laravel package for generating and managing modular applications",
     "type": "library",
