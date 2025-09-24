@@ -1,0 +1,15 @@
+<?php
+
+namespace {{NAMESPACE}}\{{MODULE_NAME}}\Models;
+
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+
+class {{MODULE_NAME}} extends Model
+{
+    use HasFactory;
+
+    protected $table = '{{TABLE_NAME}}';
+
+    protected $fillable = [];
+}

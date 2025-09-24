@@ -1,0 +1,12 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+use {{NAMESPACE}}\{{MODULE_NAME}}\Controllers\{{MODULE_NAME}}Controller;
+
+Route::prefix('{{MODULE_NAME_KEBAB}}')->group(function () {
+    Route::get('/', [{{MODULE_NAME}}Controller::class, 'apiIndex']);
+    Route::post('/', [{{MODULE_NAME}}Controller::class, 'apiStore']);
+    Route::get('/{{{MODULE_NAME_LOWER}}}', [{{MODULE_NAME}}Controller::class, 'show']);
+    Route::put('/{{{MODULE_NAME_LOWER}}}', [{{MODULE_NAME}}Controller::class, 'update']);
+    Route::delete('/{{{MODULE_NAME_LOWER}}}', [{{MODULE_NAME}}Controller::class, 'destroy']);
+});

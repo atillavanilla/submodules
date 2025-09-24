@@ -1,0 +1,14 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+use {{NAMESPACE}}\{{MODULE_NAME}}\Controllers\{{MODULE_NAME}}Controller;
+
+Route::prefix('{{MODULE_NAME_KEBAB}}')->group(function () {
+    Route::get('/', [{{MODULE_NAME}}Controller::class, 'index'])->name('{{MODULE_NAME_KEBAB}}.index');
+    Route::get('/create', [{{MODULE_NAME}}Controller::class, 'create'])->name('{{MODULE_NAME_KEBAB}}.create');
+    Route::post('/', [{{MODULE_NAME}}Controller::class, 'store'])->name('{{MODULE_NAME_KEBAB}}.store');
+    Route::get('/{{{MODULE_NAME_LOWER}}}', [{{MODULE_NAME}}Controller::class, 'show'])->name('{{MODULE_NAME_KEBAB}}.show');
+    Route::get('/{{{MODULE_NAME_LOWER}}}/edit', [{{MODULE_NAME}}Controller::class, 'edit'])->name('{{MODULE_NAME_KEBAB}}.edit');
+    Route::put('/{{{MODULE_NAME_LOWER}}}', [{{MODULE_NAME}}Controller::class, 'update'])->name('{{MODULE_NAME_KEBAB}}.update');
+    Route::delete('/{{{MODULE_NAME_LOWER}}}', [{{MODULE_NAME}}Controller::class, 'destroy'])->name('{{MODULE_NAME_KEBAB}}.destroy');
+});

@@ -29,12 +29,12 @@ class ModuleGeneratorServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             $this->commands([
                 MakeModule::class,
-                ListModules::class,
-                RemoveModule::class,
-                ToggleModule::class,
-                MakeModuleComponent::class,
-                ModuleDoctor::class,
-                FixModuleProviders::class,
+                // ListModules::class,
+                // RemoveModule::class,
+                // ToggleModule::class,
+                // MakeModuleComponent::class,
+                // ModuleDoctor::class,
+                // FixModuleProviders::class,
             ]);
         }
     }

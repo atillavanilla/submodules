@@ -1,0 +1,141 @@
+<?php
+
+namespace {{NAMESPACE}}\{{MODULE_NAME}}\Providers;
+
+use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Route;
+
+class {{MODULE_NAME}}ServiceProvider extends ServiceProvider
+{
+    protected $moduleName = '{{MODULE_NAME}}';
+    protected $moduleNameLower = '{{MODULE_NAME_LOWER}}';
+
+    /**
+     * Boot the application events.
+     */
+    public function boot(): void
+    {
+        $this->registerConfig();
+        $this->registerViews();
+        $this->registerMigrations();
+        $this->registerRoutes();
+    }
+
+    /**
+     * Register the service provider.
+     */
+    public function register(): void
+    {
+        $configPath = $this->getModulePath('Config/config.php');
+        if (file_exists($configPath)) {
+            $this->mergeConfigFrom($configPath, $this->moduleNameLower);
+        }
+    }
+
+    /**
+     * Register config.
+     */
+    protected function registerConfig(): void
+    {
+        $configPath = $this->getModulePath('Config/config.php');
+        
+        if (file_exists($configPath)) {
+            $this->publishes([
+                $configPath => config_path($this->moduleNameLower . '.php'),
+            ], 'config');
+            
+            $this->mergeConfigFrom($configPath, $this->moduleNameLower);
+        }
+    }
+
+    /**
+     * Register views.
+     */
+    public function registerViews(): void
+    {
+        $viewPath = resource_path('views/modules/' . $this->moduleNameLower);
+        $sourcePath = $this->getModulePath('Resources/Views');
+
+        if (is_dir($sourcePath)) {
+            $this->publishes([
+                $sourcePath => $viewPath
+            ], ['views', $this->moduleNameLower . '-module-views']);
+
+            $this->loadViewsFrom([$sourcePath], $this->moduleNameLower);
+        }
+    }
+
+    /**
+     * Register migrations.
+     */
+    protected function registerMigrations(): void
+    {
+        $migrationsPath = $this->getModulePath('Database/Migrations');
+        
+        if (is_dir($migrationsPath)) {
+            $this->loadMigrationsFrom($migrationsPath);
+        }
+    }
+
+    /**
+     * Register routes.
+     */
+    protected function registerRoutes(): void
+    {
+        $this->registerWebRoutes();
+        $this->registerApiRoutes();
+    }
+
+    /**
+     * Register web routes.
+     */
+    protected function registerWebRoutes(): void
+    {
+        $routesPath = $this->getModulePath('Routes/web.php');
+        
+        if (file_exists($routesPath)) {
+            Route::group([
+                'middleware' => 'web',
+                'prefix' => $this->moduleNameLower,
+                'namespace' => "{{NAMESPACE}}\\{$this->moduleName}\\Controllers"
+            ], function () use ($routesPath) {
+                require $routesPath;
+            });
+        }
+    }
+
+    /**
+     * Register API routes.
+     */
+    protected function registerApiRoutes(): void
+    {
+        $routesPath = $this->getModulePath('Routes/api.php');
+        
+        if (file_exists($routesPath)) {
+            Route::group([
+                'middleware' => 'api',
+                'prefix' => 'api/' . $this->moduleNameLower,
+                'namespace' => "{{NAMESPACE}}\\{$this->moduleName}\\Controllers"
+            ], function () use ($routesPath) {
+                require $routesPath;
+            });
+        }
+    }
+
+    /**
+     * Get the module path.
+     */
+    protected function getModulePath($path = ''): string
+    {
+        $modulePath = base_path("src/Modules/{$this->moduleName}");
+        return $modulePath . ($path ? DIRECTORY_SEPARATOR . $path : '');
+    }
+
+    /**
+     * Get the services provided by the provider.
+     */
+    public function provides(): array
+    {
+        return [];
+    }
+}
