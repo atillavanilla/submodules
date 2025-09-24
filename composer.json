@@ -1,7 +1,7 @@
 {
     "name": "atilla/submodules",
     "version": "0.1.0",
-    "description": "A Laravel package for generating and managing modular applications",
+    "description": "A Laravel package for generating and managing modular api applications",
     "type": "library",
     "license": "MIT",
     "require": {
