@@ -13,7 +13,7 @@ abstract class BaseGenerator
     public function __construct(Filesystem $filesystem)
     {
         $this->filesystem = $filesystem;
-        $this->config = config('module-generator', []);
+        $this->config = config('submodules', []);
     }
 
     /**

@@ -19,8 +19,8 @@ class ModuleGeneratorServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->publishes([
-            __DIR__ . '/../config/module-generator.php' => config_path('module-generator.php'),
-        ], 'module-generator-config');
+            __DIR__ . '/../config/submodules.php' => config_path('submodules.php'),
+        ], 'submodules-config');
 
         $this->publishes([
             __DIR__ . '/Stubs' => resource_path('stubs/module-generator'),
@@ -45,8 +45,8 @@ class ModuleGeneratorServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->mergeConfigFrom(
-            __DIR__ . '/../config/module-generator.php',
-            'module-generator'
+            __DIR__ . '/../config/submodules.php',
+            'submodules'
         );
 
         $this->app->singleton('module-generator', function () {
