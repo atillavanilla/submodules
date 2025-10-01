@@ -1,10 +1,10 @@
 <?php
 
-namespace Atilla\ModuleGenerator\Commands;
+namespace Atilla\SubmoduleGenerator\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Str;
-use Atilla\ModuleGenerator\Facades\SubmoduleGenerator;
+use Atilla\SubmoduleGenerator\Facades\SubmoduleGenerator;
 
 class MakeSubmodule extends Command
 {

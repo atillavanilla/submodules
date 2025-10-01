@@ -1,6 +1,6 @@
 <?php 
 
-namespace Atilla\ModuleGenerator\Generators;
+namespace Atilla\SubmoduleGenerator\Generators;
 
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Str;

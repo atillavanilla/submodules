@@ -1,9 +1,9 @@
 <?php
 
-namespace Atilla\ModuleGenerator;
+namespace Atilla\SubmoduleGenerator;
 
 use Illuminate\Support\ServiceProvider;
-use Atilla\ModuleGenerator\Commands\MakeSubmodule;
+use Atilla\SubmoduleGenerator\Commands\MakeSubmodule;
 // use Atilla\ModuleGenerator\Commands\ListModules;
 // use Atilla\ModuleGenerator\Commands\RemoveModule;
 // use Atilla\ModuleGenerator\Commands\ToggleModule;

@@ -1,11 +1,11 @@
 <?php
 
-namespace Atilla\ModuleGenerator;
+namespace Atilla\SubmoduleGenerator;
 
 use Illuminate\Filesystem\Filesystem;
-use Atilla\ModuleGenerator\Generators\ServiceProviderGenerator;
-use Atilla\ModuleGenerator\Generators\ControllerGenerator;
-use Atilla\ModuleGenerator\Generators\ModelGenerator;
+use Atilla\SubmoduleGenerator\Generators\ServiceProviderGenerator;
+use Atilla\SubmoduleGenerator\Generators\ControllerGenerator;
+use Atilla\SubmoduleGenerator\Generators\ModelGenerator;
 
 class SubmoduleGenerator
 {

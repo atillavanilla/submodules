@@ -1,6 +1,6 @@
 <?php
 
-namespace Atilla\ModuleGenerator\Facades;
+namespace Atilla\SubmoduleGenerator\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

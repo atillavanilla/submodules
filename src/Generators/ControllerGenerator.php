@@ -1,6 +1,6 @@
 <?php
 
-namespace Atilla\ModuleGenerator\Generators;
+namespace Atilla\SubmoduleGenerator\Generators;
 
 class ControllerGenerator extends BaseGenerator
 {
