@@ -16,7 +16,7 @@ class {{MODULE_NAME}}ServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->registerConfig();
-        $this->registerViews();
+        // $this->registerViews();
         $this->registerMigrations();
         $this->registerRoutes();
     }

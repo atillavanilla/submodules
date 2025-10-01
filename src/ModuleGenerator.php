@@ -35,7 +35,7 @@ class ModuleGenerator
     {
         $this->createModuleStructure($moduleName);
         
-        $config = config('module-generator.files', []);
+        $config = config('submodules.files', []);
         
         foreach ($this->generators as $type => $generator) {
             if ($config[$type] ?? true) {
@@ -51,8 +51,8 @@ class ModuleGenerator
      */
     protected function createModuleStructure(string $moduleName): void
     {
-        $structure = config('module-generator.structure', []);
-        $modulePath = base_path(config('module-generator.modules_path', 'src/Modules') . '/' . $moduleName);
+        $structure = config('submodules.structure', []);
+        $modulePath = base_path(config('submodules.modules_path', 'src/Modules') . '/' . $moduleName);
 
         foreach ($structure as $directory) {
             $this->filesystem->makeDirectory($modulePath . '/' . $directory, 0755, true);
@@ -64,7 +64,7 @@ class ModuleGenerator
      */
     public function moduleExists(string $moduleName): bool
     {
-        $modulePath = base_path(config('module-generator.modules_path', 'src/Modules') . '/' . $moduleName);
+        $modulePath = base_path(config('submodules.modules_path', 'src/Modules') . '/' . $moduleName);
         return $this->filesystem->isDirectory($modulePath);
     }
 
@@ -73,7 +73,7 @@ class ModuleGenerator
      */
     public function getAllModules(): array
     {
-        $modulesPath = base_path(config('module-generator.modules_path', 'src/Modules'));
+        $modulesPath = base_path(config('submodules.modules_path', 'src/Modules'));
         
         if (!$this->filesystem->isDirectory($modulesPath)) {
             return [];

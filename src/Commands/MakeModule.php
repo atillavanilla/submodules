@@ -47,7 +47,7 @@ class MakeModule extends Command
         $this->line("2. Visit /src/Modules/{$this->getKebabCase($moduleName)} to see your module");
         $this->line('3. Customize the generated files as needed');
         $this->line('');
-        $this->comment("Module created at: " . config('module-generator.modules_path', 'src/Modules') . "/{$moduleName}");
+        $this->comment("Module created at: " . config('submodules.modules_path', 'src/Modules') . "/{$moduleName}");
     }
 
     protected function getKebabCase($string)

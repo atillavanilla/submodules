@@ -6,7 +6,7 @@ class ModelGenerator extends BaseGenerator
 {
     public function generate(string $moduleName, array $options = []): bool
     {
-        $modelName = $options['name'] ?? $moduleName . 'Model';
+        $modelName = $options['name'] ?? $moduleName;
         
         $stub = $this->getStub('model');
         $replacements = array_merge($this->getCommonReplacements($moduleName), [
