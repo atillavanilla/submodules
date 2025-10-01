@@ -7,7 +7,7 @@ use Atilla\ModuleGenerator\Generators\ServiceProviderGenerator;
 use Atilla\ModuleGenerator\Generators\ControllerGenerator;
 use Atilla\ModuleGenerator\Generators\ModelGenerator;
 
-class ModuleGenerator
+class SubmoduleGenerator
 {
     protected Filesystem $filesystem;
     protected array $generators;
@@ -24,7 +24,6 @@ class ModuleGenerator
             'service_provider' => new ServiceProviderGenerator($this->filesystem),
             'controller' => new ControllerGenerator($this->filesystem),
             'model' => new ModelGenerator($this->filesystem),
-            
         ];
     }
 

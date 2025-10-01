@@ -17,8 +17,11 @@
     },
     "autoload": {
         "psr-4": {
-            "Atilla\\ModuleGenerator\\": "src/"
-        }
+            "Atilla\\SubmoduleGenerator\\": "src/Submodules/"
+        },
+        "files": [
+                "app/Helpers/helpers.php"
+            ]
     },
     "autoload-dev": {
         "psr-4": {

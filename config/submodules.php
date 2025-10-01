@@ -10,7 +10,7 @@ return [
     | You can customize this path based on your project structure.
     |
     */
-    'modules_path' => 'src/Modules',
+    'submodules_path' => 'src/Submodules',
 
     /*
     |--------------------------------------------------------------------------

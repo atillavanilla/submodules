@@ -48,7 +48,7 @@ abstract class BaseGenerator
      */
     protected function getModulePath(string $moduleName, string $path = ''): string
     {
-        $basePath = base_path($this->config['modules_path'] . '/' . $moduleName);
+        $basePath = base_path($this->config['submodules_path'] . '/' . $moduleName);
         return $basePath . ($path ? DIRECTORY_SEPARATOR . $path : '');
     }
 
@@ -64,6 +64,8 @@ abstract class BaseGenerator
 
     /**
      * Generate common replacements.
+     * 
+     * @return array<string, string>
      */
     protected function getCommonReplacements(string $moduleName): array
     {

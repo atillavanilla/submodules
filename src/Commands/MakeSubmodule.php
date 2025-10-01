@@ -4,9 +4,9 @@ namespace Atilla\ModuleGenerator\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Str;
-use Atilla\ModuleGenerator\Facades\ModuleGenerator;
+use Atilla\ModuleGenerator\Facades\SubmoduleGenerator;
 
-class MakeModule extends Command
+class MakeSubmodule extends Command
 {
     protected $signature = 'make:module {name} {--force : Overwrite existing module}';
     protected $description = 'Create a new module with all necessary files and structure';
@@ -18,13 +18,13 @@ class MakeModule extends Command
 
         $this->info("Creating module: {$moduleName}");
 
-        if (ModuleGenerator::moduleExists($moduleName) && !$force) {
+        if (SubmoduleGenerator::moduleExists($moduleName) && !$force) {
             $this->error("Module {$moduleName} already exists! Use --force to overwrite.");
             return 1;
         }
 
         try {
-            ModuleGenerator::generateModule($moduleName, [
+            SubmoduleGenerator::generateModule($moduleName, [
                 'force' => $force
             ]);
 

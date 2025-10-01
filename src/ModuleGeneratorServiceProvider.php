@@ -3,13 +3,13 @@
 namespace Atilla\ModuleGenerator;
 
 use Illuminate\Support\ServiceProvider;
-use Atilla\ModuleGenerator\Commands\MakeModule;
-use Atilla\ModuleGenerator\Commands\ListModules;
-use Atilla\ModuleGenerator\Commands\RemoveModule;
-use Atilla\ModuleGenerator\Commands\ToggleModule;
-use Atilla\ModuleGenerator\Commands\MakeModuleComponent;
-use Atilla\ModuleGenerator\Commands\ModuleDoctor;
-use Atilla\ModuleGenerator\Commands\FixModuleProviders;
+use Atilla\ModuleGenerator\Commands\MakeSubmodule;
+// use Atilla\ModuleGenerator\Commands\ListModules;
+// use Atilla\ModuleGenerator\Commands\RemoveModule;
+// use Atilla\ModuleGenerator\Commands\ToggleModule;
+// use Atilla\ModuleGenerator\Commands\MakeModuleComponent;
+// use Atilla\ModuleGenerator\Commands\ModuleDoctor;
+// use Atilla\ModuleGenerator\Commands\FixModuleProviders;
 
 class ModuleGeneratorServiceProvider extends ServiceProvider
 {
@@ -28,7 +28,7 @@ class ModuleGeneratorServiceProvider extends ServiceProvider
 
         if ($this->app->runningInConsole()) {
             $this->commands([
-                MakeModule::class,
+                MakeSubmodule::class,
                 // ListModules::class,
                 // RemoveModule::class,
                 // ToggleModule::class,
@@ -49,8 +49,8 @@ class ModuleGeneratorServiceProvider extends ServiceProvider
             'submodules'
         );
 
-        $this->app->singleton('module-generator', function () {
-            return new ModuleGenerator();
+        $this->app->singleton('submodule-generator', function () {
+            return new SubmoduleGenerator();
         });
     }
 
@@ -59,6 +59,6 @@ class ModuleGeneratorServiceProvider extends ServiceProvider
      */
     public function provides(): array
     {
-        return ['module-generator'];
+        return ['submodule-generator'];
     }
 }
