@@ -25,16 +25,16 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Atilla\\ModuleGenerator\\Tests\\": "tests/"
+            "Atilla\\SubmoduleGenerator\\Tests\\": "tests/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Atilla\\ModuleGenerator\\ModuleGeneratorServiceProvider"
+                "Atilla\\SubmoduleGenerator\\SubmoduleGeneratorServiceProvider"
             ],
             "aliases": {
-                "ModuleGenerator": "Atilla\\ModuleGenerator\\Facades\\ModuleGenerator"
+                "SubmoduleGenerator": "Atilla\\SubmoduleGenerator\\Facades\\SubmoduleGenerator"
             }
         }
     },

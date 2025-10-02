@@ -11,7 +11,7 @@ use Atilla\SubmoduleGenerator\Commands\MakeSubmodule;
 // use Atilla\ModuleGenerator\Commands\ModuleDoctor;
 // use Atilla\ModuleGenerator\Commands\FixModuleProviders;
 
-class ModuleGeneratorServiceProvider extends ServiceProvider
+class SubmoduleGeneratorServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap any package services.
