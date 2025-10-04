@@ -10,7 +10,7 @@ return [
     | You can customize this path based on your project structure.
     |
     */
-    'submodules_path' => 'src/Submodules',
+    'submodules_path' => 'src/SubModules',
 
     /*
     |--------------------------------------------------------------------------
@@ -45,17 +45,17 @@ return [
         'Controllers',
         'Models',
         'Providers',
-        'Routes',
+        // 'Routes',
         // 'Resources/Views',
         // 'Resources/Assets/js',
         // 'Resources/Assets/css',
-        'Config',
-        'Database/Migrations',
-        'Database/Seeders',
-        'Services',
-        'Repositories',
-        'Tests/Unit',
-        'Tests/Feature',
+        // 'Config',
+        // 'Database/Migrations',
+        // 'Database/Seeders',
+        // 'Services',
+        // 'Repositories',
+        // 'Tests/Unit',
+        // 'Tests/Feature',
     ],
 
     /*
@@ -70,11 +70,11 @@ return [
         'service_provider' => true,
         'controller' => true,
         'model' => true,
-        'migration' => true,
-        'routes' => true,
-        'views' => false,
-        'config' => true,
-        'test' => true,
+        // 'migration' => true,
+        // 'routes' => true,
+        // 'views' => false,
+        // 'config' => true,
+        // 'test' => true,
     ],
 
     /*

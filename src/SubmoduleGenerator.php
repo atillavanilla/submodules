@@ -51,7 +51,7 @@ class SubmoduleGenerator
     protected function createModuleStructure(string $moduleName): void
     {
         $structure = config('submodules.structure', []);
-        $modulePath = base_path(config('submodules.modules_path', 'src/Modules') . '/' . $moduleName);
+        $modulePath = base_path(config('submodules.submodules_path', 'src/SubModules') . '/' . $moduleName);
 
         foreach ($structure as $directory) {
             $this->filesystem->makeDirectory($modulePath . '/' . $directory, 0755, true);
@@ -63,7 +63,7 @@ class SubmoduleGenerator
      */
     public function moduleExists(string $moduleName): bool
     {
-        $modulePath = base_path(config('submodules.modules_path', 'src/Modules') . '/' . $moduleName);
+        $modulePath = base_path(config('submodules.submodules_path', 'src/SubModules') . '/' . $moduleName);
         return $this->filesystem->isDirectory($modulePath);
     }
 
@@ -72,7 +72,7 @@ class SubmoduleGenerator
      */
     public function getAllModules(): array
     {
-        $modulesPath = base_path(config('submodules.modules_path', 'src/Modules'));
+        $modulesPath = base_path(config('submodules.submodules_path', 'src/SubModules'));
         
         if (!$this->filesystem->isDirectory($modulesPath)) {
             return [];
