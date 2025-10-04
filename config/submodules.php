@@ -20,7 +20,7 @@ return [
     | The base namespace for your modules.
     |
     */
-    'namespace' => 'Modules',
+    'namespace' => 'SubModules',
 
     /*
     |--------------------------------------------------------------------------

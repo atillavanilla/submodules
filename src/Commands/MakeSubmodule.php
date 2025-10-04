@@ -16,10 +16,10 @@ class MakeSubmodule extends Command
         $moduleName = Str::studly($this->argument('name'));
         $force = $this->option('force');
 
-        $this->info("Creating module: {$moduleName}");
+        $this->info("Creating submodule: {$moduleName}");
 
         if (SubmoduleGenerator::moduleExists($moduleName) && !$force) {
-            $this->error("Module {$moduleName} already exists! Use --force to overwrite.");
+            $this->error("SubModule {$moduleName} already exists! Use --force to overwrite.");
             return 1;
         }
 
@@ -28,11 +28,11 @@ class MakeSubmodule extends Command
                 'force' => $force
             ]);
 
-            $this->info("✅ Module {$moduleName} created successfully!");
+            $this->info("✅ SubModule {$moduleName} created successfully!");
             $this->showNextSteps($moduleName);
 
         } catch (\Exception $e) {
-            $this->error("❌ Failed to create module: " . $e->getMessage());
+            $this->error("❌ Failed to create SubModule: " . $e->getMessage());
             return 1;
         }
 
@@ -44,10 +44,10 @@ class MakeSubmodule extends Command
         $this->line('');
         $this->info('🎉 Next Steps:');
         $this->line('1. Run: php artisan migrate (if migration was generated)');
-        $this->line("2. Visit /src/Modules/{$this->getKebabCase($moduleName)} to see your module");
+        $this->line("2. Visit /src/SubModules/{$this->getKebabCase($moduleName)} to see your module");
         $this->line('3. Customize the generated files as needed');
         $this->line('');
-        $this->comment("Module created at: " . config('submodules.modules_path', 'src/Modules') . "/{$moduleName}");
+        $this->comment("Module created at: " . config('submodules.submodules_path', 'src/SubModules') . "/{$moduleName}");
     }
 
     protected function getKebabCase($string)

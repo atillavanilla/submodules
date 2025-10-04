@@ -76,7 +76,7 @@ abstract class BaseGenerator
             'MODULE_NAME_SNAKE' => Str::snake($moduleName),
             'MODULE_NAME_PLURAL' => Str::plural($moduleName),
             'MODULE_NAME_PLURAL_LOWER' => strtolower(Str::plural($moduleName)),
-            'NAMESPACE' => $this->config['namespace'] ?? 'Modules',
+            'NAMESPACE' => $this->config['namespace'] ?? 'SubModules',
             'VARIABLE_NAME' => Str::camel(Str::plural($moduleName)),
             'TABLE_NAME' => Str::snake(Str::plural($moduleName)),
             'TIMESTAMP' => date('Y_m_d_His'),
