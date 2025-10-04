@@ -3,9 +3,10 @@
 namespace Atilla\SubmoduleGenerator;
 
 use Illuminate\Filesystem\Filesystem;
-use Atilla\SubmoduleGenerator\Generators\ServiceProviderGenerator;
-use Atilla\SubmoduleGenerator\Generators\ControllerGenerator;
 use Atilla\SubmoduleGenerator\Generators\ModelGenerator;
+use Atilla\SubmoduleGenerator\Generators\RoutesGenerator;
+use Atilla\SubmoduleGenerator\Generators\ControllerGenerator;
+use Atilla\SubmoduleGenerator\Generators\ServiceProviderGenerator;
 
 class SubmoduleGenerator
 {
@@ -24,6 +25,7 @@ class SubmoduleGenerator
             'service_provider' => new ServiceProviderGenerator($this->filesystem),
             'controller' => new ControllerGenerator($this->filesystem),
             'model' => new ModelGenerator($this->filesystem),
+            'routes' => new RoutesGenerator($this->filesystem),
         ];
     }
 

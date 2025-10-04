@@ -71,7 +71,7 @@ return [
         'controller' => true,
         'model' => true,
         // 'migration' => true,
-        // 'routes' => true,
+        'routes' => true,
         // 'views' => false,
         // 'config' => true,
         // 'test' => true,
